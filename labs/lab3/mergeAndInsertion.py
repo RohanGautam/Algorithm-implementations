@@ -122,21 +122,21 @@ class mergeAndInsertion():
 #         writer.writerow([i, m.keyCmpCounter, m.timeTaken])
 
 
-n=1000
-data = [random.randint(1, 20000) for _ in range(n)] # below fine if you run it the second time?!
-# testing mergesort
-m=mergeAndInsertion(copy.deepcopy(data))
-# print('time taken:',m.timeTaken)
-m.testMerge()
-mergeTime = m.timeTaken
-mergeComparisons = m.keyCmpCounter
-print('Mergesort:')
-print(f'\ttime taken : {mergeTime}ns \n\tkeyComparisons : {mergeComparisons}')
+# n=1000
+# data = [random.randint(1, 20000) for _ in range(n)] # below fine if you run it the second time?!
+# # testing mergesort
+# m=mergeAndInsertion(copy.deepcopy(data))
+# # print('time taken:',m.timeTaken)
+# m.testMerge()
+# mergeTime = m.timeTaken
+# mergeComparisons = m.keyCmpCounter
+# print('Mergesort:')
+# print(f'\ttime taken : {mergeTime}ns \n\tkeyComparisons : {mergeComparisons}')
 
-m2=mergeAndInsertion(copy.deepcopy(data))
-# print('time taken:',m.timeTaken)
-m2.testMerge()
-mergeTime = m2.timeTaken
-mergeComparisons = m2.keyCmpCounter
-print('Mergesort:')
-print(f'\ttime taken : {mergeTime}ns \n\tkeyComparisons : {mergeComparisons}')
+# m2=mergeAndInsertion(copy.deepcopy(data))
+# # print('time taken:',m.timeTaken)
+# m2.testMerge()
+# mergeTime = m2.timeTaken
+# mergeComparisons = m2.keyCmpCounter
+# print('Mergesort:')
+# print(f'\ttime taken : {mergeTime}ns \n\tkeyComparisons : {mergeComparisons}')
