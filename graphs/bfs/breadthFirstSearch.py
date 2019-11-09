@@ -48,4 +48,6 @@ def bfs(graph, startNode, visitNext):
                 visitNext.put(node)
                 print(f'visited, putting: {node}')
                 # >> add edge between node and currentNode to tree <<
+
+# G,E are unreachable
 bfs(adjList, 'A', visitNext) # passing these so it's clear what it needs if global variables not present
