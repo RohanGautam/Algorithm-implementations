@@ -2,7 +2,7 @@ import queue
 from anytree import Node, RenderTree
 '''
 Implementation of BFS - Breadth first search
-using: ../graphImage/graph1.png
+picture of graph being used: ../graphImage/graph1.png
 '''
 nodeNames = 'ABCDEFG'
 indexmap = dict(zip(range(len(nodeNames)), nodeNames))
@@ -44,7 +44,7 @@ def bfs(graph, startNode, visitNext):
     count=0
     while visitNext.empty() == False:
         currentNode = visitNext.get()
-        if count == 0 :  # if root node of tree, set it as the root, and keep track of it via firstNode
+        if count == 0 :  # if first ele, current node is firstNode
             currentTreeNode = firstNode
             count+=1
         else :
