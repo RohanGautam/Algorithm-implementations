@@ -4,7 +4,13 @@ from anytree import Node, RenderTree
 # Implementation of BFS - Breadth first search
 >Visit all neighbours of current node, before visiting the other neighbours of neighbours.
 >Can be used to find shortest path
+
 picture of graph being used: ../graphImage/graph1.png
+
+# Time complexity, worst case: [same as dfs]
+Θ(V+E) if adjacency list
+Θ(V^2) if adjacency matrix (here)
+
 '''
 nodeNames = 'ABCDEFG'
 indexmap = dict(zip(range(len(nodeNames)), nodeNames))
