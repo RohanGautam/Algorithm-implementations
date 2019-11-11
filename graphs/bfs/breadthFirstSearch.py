@@ -71,4 +71,4 @@ def bfs(graph, startNode, visitNext):
 bfsTree = bfs(adjList, 'A', visitNext) # passing these so it's clear what it needs if global variables not present
 print('bfs tree :')
 for pre, fill, node in bfsTree:
-    print("%s%s" % (pre, node.name))
+    print(f'{pre}{node.name}')

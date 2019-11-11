@@ -1,3 +1,4 @@
+from anytree import Node, RenderTree
 '''
 Implementation of DFS - depth first search
 > Go as deep as you can, then backtrack back, and go deep again.
@@ -29,15 +30,23 @@ def viewConnections():
 def indexOfNode(letter):
     return ord(letter)-65  # for uppercase letters only
 
-
 # recursive dfs (stack implicitly used)
-def dfs_recursive(graph, node):
-    visited[node] = True
-    row = graph[indexOfNode(node)]
+def dfs_recursive(graph, nodeName, treeNode):
+    visited[nodeName] = True
+    row = graph[indexOfNode(nodeName)]
     neighbours = [indexmap[i] for i in range(len(row)) if row[i] == 1]
     for neighbour in neighbours:
         if visited[neighbour] == False:
-            print(f'visited {neighbour}, parent is {node}')
-            dfs_recursive(graph, neighbour) # will be marked visited in it's recursive call itself.
+            # will be marked visited in it's recursive call itself. Also thr current node is the parent for it's neighbour, as can be seen from what's being passed to the function.
+            dfs_recursive(graph, neighbour, Node(neighbour, parent=treeNode))
+    return treeNode
 
-dfs_recursive(adjList, 'A')
+startNodeName = 'A'
+dfs_tree = dfs_recursive(adjList, startNodeName, Node(startNodeName))
+
+# `anytree` keeps track of the connections we make to the parent node.
+#  So in the end, we just render it (it also supports great visualisation!)
+for pre, fill, node in RenderTree(dfs_tree):
+    print(f'{pre}{node.name}')
+
+# G, E unreachable
