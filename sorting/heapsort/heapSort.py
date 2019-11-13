@@ -26,13 +26,13 @@ class Heap:
         ```
         '''
         if fromDeleteMax:
-            '''if from deletemax, we are replacing the root with k[the smallest][happens at the end of fn]
+            '''if from deletemax, we are replacing the root with k[the smallest][replacement happens at the end of this fn]
             After this, we continue to fix the heap
             '''
             root = 0
             left = 1
         else:
-            '''we want to fix subheap where k is the root'''
+            '''else, we want to fix subheap where k is the root [used during heap construction]'''
             root = self.array.index(k)
             left = 2*self.array.index(k)+1
 
