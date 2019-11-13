@@ -39,7 +39,7 @@ class Heap:
         self.array = self.array[:-1]
         return last
 
-    def fixHeap(self, k): # H, k but here H is global
+    def fixHeap(self, k, fromDeleteMax = False): # H, k but here H is global
         '''
         fixes subheap at given root k.
         example:
@@ -50,8 +50,17 @@ class Heap:
         h.printHeap()
         ```
         '''
-        root = self.array.index(k) # k is the root of where the subheap begins
-        left = 2*self.array.index(k)+1
+        if fromDeleteMax:
+            '''if from deletemax, we are replacing the root with k[the smallest][happens at the end of fn]
+            After this, we continue to fix the heap
+            '''
+            root = 0
+            left = 1
+        else:
+            '''we want to fix subheap where k is the root'''
+            root = self.array.index(k) # k is the root of where the subheap begins
+            left = 2*self.array.index(k)+1
+            
         # finding position to put k in
         while left < len(self.array):
             if left+1 < len(self.array) and self.array[left] < self.array[left+1]:
@@ -74,18 +83,38 @@ class Heap:
             self.heapify(2*heapIndex+1) # the left subtree
             self.heapify(2*heapIndex+2) # the right subtree
             self.fixHeap(self.array[heapIndex])
+    
+    def getMax(self):
+        return self.array[0]
+    def deleteMax(self):
+        smallest = self.array[-1] # copy last(smallest) element
+        self.array = self.array[:-1] # delete last element
+        self.fixHeap(smallest, fromDeleteMax=True)
+
+    def heapsort(self):
+        self.constructHeap()
+        for i in range(len(self.array)-1, -1, -1):
+            curMax = self.getMax()
+            self.deleteMax() # deletes max and fixes the heap
+            self.array.append(curMax)
+        print(self.array)
+        self.printHeap()
+
+
+
 
         
 
 
 
 h= Heap(list('ABCDFKPRY'))
-h.printHeap()
-h.constructHeap()
-# h.fixHeap('B')
-h.printHeap()
+h.heapsort()
+# h.printHeap()
+# h.constructHeap()
+# # h.fixHeap('B')
+# h.printHeap()
 
-# example that heaps are not unique, the output below is also a heap
-h2 = Heap()
-h2.printHeap()
+# # example that heaps are not unique, the output below is also a heap
+# h2 = Heap()
+# h2.printHeap()
 
