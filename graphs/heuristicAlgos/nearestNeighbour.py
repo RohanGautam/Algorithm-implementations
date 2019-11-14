@@ -2,8 +2,6 @@ from anytree import Node, RenderTree
 
 nodeNames = 'ABCD'
 indexmap = dict(zip(range(len(nodeNames)), nodeNames))
-# mark all unvisited at first
-visited = dict(zip(nodeNames, [False]*len(nodeNames)))
 
 # undirected, fully connected graph, so symmetric about main diagonal
 adjList = [
