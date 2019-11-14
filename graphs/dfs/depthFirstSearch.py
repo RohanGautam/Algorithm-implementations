@@ -11,7 +11,7 @@ Implementation of DFS - depth first search
 > If v->neighbours[w1,w2,w3..], visit all vertices adjacent to w1, then backtrack, then continue with [w2...]
 > Can be used to find solutions to something by exhausting possibilities, because of it's nature of going in depth
 
-picture of graph being used: ../graphImage/graph1.png
+picture of graph being used: ./graph1.png
 
 # Time complexity, worst case: [same as bfs]
 Θ(V+E) if adjacency list

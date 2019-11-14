@@ -5,7 +5,7 @@ from anytree import Node, RenderTree
 >Visit all neighbours of current node, before visiting the other neighbours of neighbours.
 >Can be used to find shortest path
 
-picture of graph being used: ../graphImage/graph1.png
+picture of graph being used: ./graph1.png
 
 # Time complexity, worst case: [same as dfs]
 Θ(V+E) if adjacency list
