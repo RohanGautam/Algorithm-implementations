@@ -7,16 +7,19 @@ Images used and implemented in the programs are linked in the code, and included
     1. Closed address hashing
     2. Open address hashing (Linear probing and double hashing)
     Contents of the hash table of specified size are shown, like so:
+    
     ![](readme_pictures/hashing.png)
 
 * Searching - Sequential and binary search
 * Sorting:
     - Insertion sort, Mergesort, QuickSort.
     - HeapSort: sorted array and final heap shown. Mess around with this class to get a better feel of each of the implementations.
+    
     ![](readme_pictures/heapsort.png)
 
 * Graphs:
     - BFS and DFS (cell 4 and 5 respectively, in this image. The graph we are using is present in the `bfs` and `dfs` directory)
+    
     ![](readme_pictures/bfs_dfs_example.png)
     - Dijkstra's algorithm. Contents of S, d, and pi shown.
     ```
