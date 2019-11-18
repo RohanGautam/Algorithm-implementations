@@ -53,5 +53,5 @@ def nearestNeighbour(start):
     return cycle
 
 print('path to follow via nearest neighbour algorithm')
-print(nearestNeighbour('A'))
+print([' -> '.join(x) for x in nearestNeighbour('A')])
 

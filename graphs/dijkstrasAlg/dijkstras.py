@@ -49,5 +49,5 @@ def dijkstras(graph, source):
 source = 'S'
 S, d, pi = dijkstras(adjList, source)
 pi[source]=0
-print(f'{S}\n{d}\n{pi}')
+print(f'S : {S}\nd : {d}\npi : {pi}')
 
